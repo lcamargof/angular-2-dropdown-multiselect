@@ -89,7 +89,7 @@ export class MultiSelectSearchFilter implements PipeTransform {
   `],
   template: `
     <div class="dropdown">
-      <button type="button" class="dropdown-toggle" [ngClass]="settings.buttonClasses"
+      <button type="button" class="btn btn-block dropdown-toggle" [ngClass]="settings.buttonClasses"
               (click)="toggleDropdown()" [disabled]="disabled">{{ title }}&nbsp;<span class="caret"></span></button>
       <ul *ngIf="isVisible" class="dropdown-menu" [class.pull-right]="settings.pullRight" [class.dropdown-menu-right]="settings.pullRight"
           [style.max-height]="settings.maxHeight" style="display: block; height: auto; overflow-y: auto;">
@@ -134,9 +134,9 @@ export class MultiSelectSearchFilter implements PipeTransform {
             <span *ngIf="settings.checkedStyle === 'fontawesome'" style="width: 16px;display: inline-block;">
   			      <i *ngIf="isSelected(option)" class="fa fa-check" aria-hidden="true"></i>
   			    </span>
-            <span [ngClass]="settings.itemClasses">
+            <label [ngClass]="settings.itemClasses">
               {{ option.name }}
-            </span>
+            </label>
           </a>
         </li>
       </ul>
